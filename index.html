@@ -6789,13 +6789,28 @@ JSBin</a>.</p>
 
 <ol type="1">
   <li><p>Count the time elapsed by adding <i>deltas</i> in the mainloop.</p></li>
-  <li><p>If the sum of the <i>deltas</i> is greater or equal to 1000, then 1s has elapsed since we started counting.</p></li>
-  <li><p>If at the same time, we count the number of <i>frames</i> that have been drawn, then we have the <i>frame rate</i> - measured in number of frames per second. Remember, it should be around 60 fps!</p></li>
+  <li><p>If the sum of the <i>deltas</i> is greater or equal to 1000, then 1s has 
+    elapsed since we started counting.</p></li>
+  <li><p>If at the same time, we count the number of <i>frames</i> that have been 
+    drawn, then we have the <i>frame rate</i> - measured in number of frames per 
+    second. Remember, it should be around 60 fps!</p></li>
 </ol>
 
-<p><b>Quick glossary:</b> the word <i>delta</i> is the name of a Greek letter (uppercase <b>Δ</b>, lowercase <b>δ</b> or <b>𝛿).</b> The upper-case version is used in mathematics as an abbreviation for measuring the <i>change</i> in some object, over time - in our case, how quickly the mainloopis running. This dictates the maximum speed at which the game display will be updated. This maximum speed could be referred to as the <i>rate of change</i>. We call what is displayed at a single point-in-time, a <i>frame</i>. Thus the <i>rate of change</i>  can be measured in frames per second (<i>fps</i>). Accordingly, our game’s <i>delta,</i> determines the achievable frame rate - the <b>shorter</b> the <i>delta</i> (measured in mS), the <b>faster</b> the possible <i>rate of change</i> (in <i>fps</i>).</p>
+<p><b>Quick glossary:</b> the word <i>delta</i> is the name of a Greek letter 
+(uppercase <b>Δ</b>, lowercase <b>δ</b> or <b>𝛿).</b> The upper-case version 
+is used in mathematics as an abbreviation for measuring the <i>change</i> in 
+some object, over time - in our case, how quickly the mainloopis running. This 
+dictates the maximum speed at which the game display will be updated. This 
+maximum speed could be referred to as the <i>rate of change</i>. We call what 
+is displayed at a single point-in-time, a <i>frame</i>. Thus the <i>rate of 
+change</i>  can be measured in frames per second (<i>fps</i>). Accordingly, 
+our game’s <i>delta,</i> determines the achievable frame rate - the <b>shorter</b> 
+the <i>delta</i> (measured in mS), the <b>faster</b> the possible <i>rate of 
+change</i> (in <i>fps</i>).</p>
 
-<p>Here is a screenshot of an example and the code we added to our game engine, for measuring FPS (<a href="https://jsbin.com/noqibu/edit" target="_blank" rel="noopener noreferrer">try it online at JSBin</a>):</p>
+<p>Here is a screenshot of an example and the code we added to our game engine, for 
+measuring FPS (<a href="https://jsbin.com/noqibu/edit" target="_blank" rel="noopener noreferrer">
+try it online at JSBin</a>):</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~ 96. screenshiot of example that displays 60 fps (155) ~~~~~~~~~~~~~~~~~~~-->
 <img class="displayed"
@@ -6840,7 +6855,8 @@ JSBin</a>.</p>
 
 </details>
 
-<p>Now we can call the measureFPS function from inside the animation loop, passing it the current time, given by the high resolution timer that comes with the requestAnimationFrame API:</p>
+<p>Now we can call the measureFPS function from inside the animation loop, passing it 
+the current time, given by the high resolution timer that comes with the requestAnimationFrame API:</p>
 
 <details>
   <summary>JavaScript code!</summary>
@@ -6871,10 +6887,10 @@ JSBin</a>.</p>
 
 </details>
 
-
 <p>Hack:  achieving more than 60 fPS? It’s possible but to be avoided except in hackers’ circles!</p>
 
-<p>We also know methods of implementing loops in JavaScript which achieve even more than 60fps (this is the limit using requestAnimationFrame).</p>
+<p>We also know methods of implementing loops in JavaScript which achieve even more than 60fps 
+(this is the limit using requestAnimationFrame).</p>
 
 <p>My favorite hack uses the onerror callback on an &lt;img&gt; element like this:</p>
 
@@ -6943,7 +6959,8 @@ HTML5 Coding Essentials and Best Practices course</a>.</p>
 
 <h4>HTML5 canvas basic usage: drawing a monster</h4>
 
-<p>How to draw a monster in a canvas: <a href="https://jsbin.com/ponaki/edit" target="_blank" rel="noopener noreferrer">you can try it online at JSBin</a>.</p>
+<p>How to draw a monster in a canvas: <a href="https://jsbin.com/ponaki/edit" 
+target="_blank" rel="noopener noreferrer">you can try it online at JSBin</a>.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~ 98. small monster drawn in a canvas (158) ~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <img class="displayed"
@@ -6985,11 +7002,15 @@ border around it:</p>
 described in the HTML5 Part 1 course:</p>
 
 <ol type="1">
-  <li><p>Use a function that is called AFTER the page is fully loaded (and the DOM is ready), set a pointer to the canvas node in the DOM.</p></li>
-  <li><p>Then, get a 2D graphic context for this canvas (the context is an object we will use to draw on the canvas, to set global properties such as color, gradients, patterns and line width).</p></li>
+  <li><p>Use a function that is called AFTER the page is fully loaded (and the DOM is ready), 
+    set a pointer to the canvas node in the DOM.</p></li>
+  <li><p>Then, get a 2D graphic context for this canvas (the context is an object we will use 
+    to draw on the canvas, to set global properties such as color, gradients, patterns and line width).</p></li>
   <li><p>Only then can you can draw something,</p></li>
-  <li><p>Do not forget to use global variables for the canvas and context objects. I also recommend keeping the width and height of the canvas somewhere. These might be useful later.</p></li>
-  <li><p>For each function that will change the context (color, line width, coordinate system, etc.), start by saving the context, and end by restoring it.</p></li>
+  <li><p>Do not forget to use global variables for the canvas and context objects. I also recommend 
+    keeping the width and height of the canvas somewhere. These might be useful later.</p></li>
+  <li><p>For each function that will change the context (color, line width, coordinate system, etc.), 
+    start by saving the context, and end by restoring it.</p></li>
 </ol>
 
 <h4>Here is JavaScript code which implements those best practices:</h4>
@@ -7055,11 +7076,21 @@ described in the HTML5 Part 1 course:</p>
 using the default color (black) and wireframe and filled modes:</p>
 
 <ul>
-  <li><p>ctx.fillRect(x, y, width, height): draws a rectangle whose top left corner is at (x, y) and whose size is specified by the width and height parameters; and both outlined by, and filled with, the default color.</p></li>
+  <li><p>ctx.fillRect(x, y, width, height): draws a rectangle whose top left corner is at (x, y) 
+    and whose size is specified by the width and height parameters; and both outlined by, and 
+    filled with, the default color.</p></li>
   <li><p>ctx.strokeRect(x, y, width, height): same but in wireframe mode.</p></li>
-  <li><p>Note that we use (<i>line 30</i>) ctx.translate(x, y) to make it easier to move the monster around. So, all the drawing instructions are coded as if the monster was in (0, 0), at the top left corner of the canvas (look at <i>line 33</i>). We draw the body outline with a rectangle starting from (0, 0). Calling context.translate “changes the coordinate system” by moving the “old (0, 0)” to (x, y) and keeping other coordinates in the same position relative to the origin.</p></li>
-  <li><p><i>Line 19</i>: we call the drawMonster function with (10, 10) as parameters, which will cause the original coordinate system to be translated by (10, 10).</p></li>
-  <li><p>And if we change the coordinate system (this is what the call to ctx.translate(…) does) in a function, it is a best practice to always save the previous context  at the beginning of the function and restore it at the end of the function (<i>lines 27 and 50</i>).</p></li>
+  <li><p>Note that we use (<i>line 30</i>) ctx.translate(x, y) to make it easier to move the 
+    monster around. So, all the drawing instructions are coded as if the monster was in (0, 0), 
+    at the top left corner of the canvas (look at <i>line 33</i>). We draw the body outline with 
+    a rectangle starting from (0, 0). Calling context.translate “changes the coordinate system” by 
+    moving the “old (0, 0)” to (x, y) and keeping other coordinates in the same position relative 
+    to the origin.</p></li>
+  <li><p><i>Line 19</i>: we call the drawMonster function with (10, 10) as parameters, which will 
+    cause the original coordinate system to be translated by (10, 10).</p></li>
+  <li><p>And if we change the coordinate system (this is what the call to ctx.translate(…) does) 
+    in a function, it is a best practice to always save the previous context  at the beginning of 
+    the function and restore it at the end of the function (<i>lines 27 and 50</i>).</p></li>
 </ul>
 
 <h4>Animating the monster and including it in our game engine</h4>
