@@ -9,7 +9,7 @@ w3cx-4of5-html5.2x: Coursera - Front-End Web Development - Apps and Games
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ w3cx logo (01) ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <p align="center" width="100%">
-<img src="./images/webp/w3cx-logo.webp?raw=true"
+<img src="./images/webp/w3c-logo.webp?raw=true"
   style="width:200px;"
   title="W3C logo"
   alt="W3C logo." />
