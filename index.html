@@ -40,10 +40,11 @@ function scrollFunction() {
 }
 
 // When the user clicks on the button, scroll to the top of the document. 420 to 0.
+// was 720, 720, and 0,720
 function topFunction() {
-  document.body.scrollTop = 720;
-  document.documentElement.scrollTop = 720;
-  window.scrollTo(0,720);
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+  window.scrollTo(0,0);
 }
 </script>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -8118,9 +8119,14 @@ connected, and to see the range of facilities it can offer to
 JavaScript.</p>
 
 <p>If the user interacts with a controller (presses a button, moves a
-stick) a <a href="https://w3c.github.io/gamepad/#event-gamepadconnected" target="_blank" rel="noopener noreferrer">gamepadconnected</a> event will be sent to the page. NB the page must be visible! The event object passed to the gamepadconnected listener has a gamepad property which describes the connected device.</p>
+stick) a <a href="https://w3c.github.io/gamepad/#event-gamepadconnected" 
+target="_blank" rel="noopener noreferrer">gamepadconnected</a> event will 
+be sent to the page. NB the page must be visible! The event object passed 
+to the gamepadconnected listener has a gamepad property which describes the 
+connected device.</p>
 
-<p><a href="https://jsbin.com/kiduwu/edit?console,output" target="_blank" rel="noopener noreferrer">Example on JSBin</a></p>
+<p><a href="https://jsbin.com/kiduwu/edit?console,output" 
+target="_blank" rel="noopener noreferrer">Example on JSBin</a></p>
 
 <details>
   <summary>JavaScript code!</summary>
@@ -8148,7 +8154,9 @@ stick) a <a href="https://w3c.github.io/gamepad/#event-gamepadconnected" target
   alt="Message on mouse event listener."
   style="width:35%;" />
 
-<p>If a gamepad is disconnected (you unplug it), a <a href="https://w3c.github.io/gamepad/#event-gamepaddisconnected" target="_blank" rel="noopener noreferrer">gamepaddisconnected</a> event is fired. Any references to the gamepad object will have their connected property set to false.</p>
+<p>If a gamepad is disconnected (you unplug it), a <a href="https://w3c.github.io/gamepad/#event-gamepaddisconnected" 
+target="_blank" rel="noopener noreferrer">gamepaddisconnected</a> event is fired. Any references to the gamepad object 
+will have their connected property set to false.</p>
 
 <pre>1.  window.addEventListener(&quot;gamepaddisconnected&quot;, function(e) {
 2.     var gamepad = e.gamepad;
@@ -8238,7 +8246,11 @@ properties</a>:</p>
   <li>id: a string indicating the id of the gamepad. Useful with &gt; the mapping property below.</li>
   <li>index: an integer used to distinguish multiple controllers (gamepad &gt; 1, gamepad 2, etc.).</li>
   <li>connected: true if the controller is still connected, false if it &gt; has been disconnected.</li>
-  <li>mapping: not implemented yet by most browsers. It will allow the &gt; controllers of the gamepad to be remapped. A layout map is &gt; associated with the id of the gamepad. By default, and before they &gt; implement support for different mapping, all connected &gt; gamepads <a href="https://w3c.github.io/gamepad/#remapping" target="_blank" rel="noopener noreferrer">use a standard default &gt; layout</a>.</li>
+  <li>mapping: not implemented yet by most browsers. It will allow the &gt; controllers of the gamepad 
+    to be remapped. A layout map is &gt; associated with the id of the gamepad. By default, and before 
+    they &gt; implement support for different mapping, all connected &gt; gamepads 
+    <a href="https://w3c.github.io/gamepad/#remapping" target="_blank" rel="noopener noreferrer">
+    use a standard default &gt; layout</a>.</li>
 </ul>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~~~~ 110. standard default layout - gamepad (182) ~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -8250,17 +8262,29 @@ properties</a>:</p>
   style="width:35%;" />
 
 <ul>
-  <li>axes: an array of floating point values containing the state of each &gt; axis on the device. Usually these represent the analog sticks, &gt; with a pair of axes giving the position of the stick in its X and &gt; Y axes. Each axis is normalized to the range of -1.0…1.0, with &gt; -1.0 representing the up or left-most position of the axis, and &gt; 1.0 representing the down or right-most position of the axis.</li>
-  <li>buttons: an array &gt; of <a href="https://w3c.github.io/gamepad/#idl-def-GamepadButton" target="_blank" rel="noopener noreferrer">GamepadButton</a> objects &gt; containing the state of each button on the device. Each &gt; GamepadButton has a pressed and a value property.</li>
-  <li>The pressed property is a Boolean property indicating whether the &gt; button is currently pressed (true) or unpressed (false).</li>
-  <li>The value property is a floating point value used to enable &gt; representing analog buttons, such as the triggers, on many modern &gt; gamepads. The values are normalized to the range 0.0…1.0, with &gt; 0.0 representing a button that is not pressed, and 1.0 &gt; representing a button that is fully depressed.</li>
+  <li>axes: an array of floating point values containing the state of each &gt; axis on the device. 
+    Usually these represent the analog sticks, &gt; with a pair of axes giving the position of the 
+    stick in its X and &gt; Y axes. Each axis is normalized to the range of -1.0…1.0, with &gt; -1.0 
+    representing the up or left-most position of the axis, and &gt; 1.0 representing the down or 
+    right-most position of the axis.</li>
+  <li>buttons: an array &gt; of <a href="https://w3c.github.io/gamepad/#idl-def-GamepadButton" 
+    target="_blank" rel="noopener noreferrer">GamepadButton</a> objects &gt; containing the state of 
+    each button on the device. Each &gt; GamepadButton has a pressed and a value property.</li>
+  <li>The pressed property is a Boolean property indicating whether the &gt; button is currently 
+    pressed (true) or unpressed (false).</li>
+  <li>The value property is a floating point value used to enable &gt; representing analog buttons, 
+    such as the triggers, on many modern &gt; gamepads. The values are normalized to the range 0.0…1.0, 
+    with &gt; 0.0 representing a button that is not pressed, and 1.0 &gt; representing a button that is 
+    fully depressed.</li>
 </ul>
 
 <h4>Detecting whether a button is pressed</h4>
 
-<p>Digital, on/off buttons evaluate to either one or zero (respectively). Whereas analog buttons will return a floating-point value between zero and one.</p>
+<p>Digital, on/off buttons evaluate to either one or zero (respectively). Whereas analog buttons will 
+return a floating-point value between zero and one.</p>
 
-<p><a href="https://jsbin.com/heriqej/edit" target="_blank" rel="noopener noreferrer">Example on JSBin</a>. You might also give a look at at this demo that does the same thing but with multiple gamepads.</p>
+<p><a href="https://jsbin.com/heriqej/edit" target="_blank" rel="noopener noreferrer">Example on JSBin</a>. 
+You might also give a look at at this demo that does the same thing but with multiple gamepads.</p>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--~~~~~~~~~~~~~~~~~~~ 111. button status detected, example on jsbin (181) ~~~~~~~~~~~~~~~~~~~~-->
 <img class="displayed"
